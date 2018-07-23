@@ -67,7 +67,6 @@ def make_bar_plot(res_dict):
     plt.tight_layout()
 
 
-
 def get_mean(res_dict):
     vals = [res_dict[key] for key in res_dict]
     return mean(vals)
