@@ -66,11 +66,12 @@ def make_bar_plot(res_dict):
     plt.xticks(fontsize=8, rotation=90)
     plt.tight_layout()
 
-#    plt.show()
+
 
 def get_mean(res_dict):
     vals = [res_dict[key] for key in res_dict]
     return mean(vals)
+
 
 def filter_markers(res_dicts):
     res = []
@@ -83,12 +84,11 @@ def filter_markers(res_dicts):
                     break
     return res
 
+
 if __name__ == '__main__':
     df = sys.argv[1]
     res = get_all_results(df)
-#    res = filter_markers(res)
     r = merge_dicts([analyze_single_run(r) for r in res])
-#    print(get_mean(r))
     make_bar_plot(r)
     plt.savefig(df + '.png', dpi=120)
-    #plt.show()
+
